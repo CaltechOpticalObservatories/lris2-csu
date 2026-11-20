@@ -29,6 +29,24 @@ pip install -e ./lris2-csu
 - `cooethercat`
 
 
+### Slit geometry
+
+`lris2csu.geometry` holds the bar pair configuration and the conversions between
+slits and bar positions, in mm or encoder counts, and imports nothing from
+coo-ethercat. A pair may have only one bar placed; its slit then runs from that
+bar's edge to the far end of the opening. A slit is validated before it is
+converted: it must lie inside the opening and need only placed bars.
+
+```python
+from lris2csu.geometry import BarConfig, BarPairConfig, CSUHardwareConfig
+
+csu = CSUHardwareConfig("eth0", [BarPairConfig(1, left=BarConfig(7))], None, None)
+csu.compute_bar_mm_positions({1: (155.0, 210.0)})   # {7: 50.0}
+```
+
+Run the tests with `pytest`.
+
+
 ### Where to look, how to use (for now)
 
 #### iPython play

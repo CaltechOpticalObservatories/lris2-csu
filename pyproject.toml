@@ -10,7 +10,7 @@ packages = ["lris2csu"]
 # Basic information about your project.
 name = "lris2csu"
 version = "0.1.0" 
-dependencies = ["cooethercat", "pyzmq"]
+dependencies = ["cooethercat", "pyyaml", "pyzmq"]
 requires-python = ">=3.12"
 authors = [
   {name = "Jeb Bailey", email = "jibailey@caltech.edu"}
@@ -43,4 +43,5 @@ Repository = "https://github.com/yourusername/your-repo"
 dev = [
   "astropy",
   "matplotlib",
+  "pytest",
 ]
